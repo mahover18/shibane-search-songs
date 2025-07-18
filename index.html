@@ -4,43 +4,99 @@
 <head>
 	<meta charset="UTF-8">
 	<title>柴音 リクエスト曲 検索システム</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
 		body {
 			font-family: sans-serif;
-			padding: 20px;
+			padding: 10px;
+			margin: 0;
+			background: #f9f9f9;
+		}
+
+		h1 {
+			font-size: 1.2rem;
+			margin-bottom: 10px;
+		}
+
+		.input-group {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			margin-bottom: 10px;
 		}
 
 		input {
-			margin-right: 10px;
-			padding: 5px;
+			padding: 10px;
+			font-size: 1rem;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		button {
+			padding: 10px;
+			font-size: 1rem;
+			border: none;
+			border-radius: 5px;
+			background: #007bff;
+			color: #fff;
+			width: 100%;
+			margin-top: 5px;
 		}
 
 		table {
 			border-collapse: collapse;
-			margin-top: 20px;
+			width: 100%;
+			font-size: 0.95rem;
+			background: #fff;
 		}
 
 		th,
 		td {
 			border: 1px solid #ccc;
-			padding: 8px;
+			padding: 6px;
+			word-break: break-all;
+			text-align: left;
+		}
+
+		thead {
+			background: #eee;
+		}
+
+		@media (max-width: 600px) {
+			h1 {
+				font-size: 1rem;
+			}
+
+			th,
+			td {
+				padding: 4px;
+				font-size: 0.85rem;
+			}
+
+			input,
+			button {
+				font-size: 0.95rem;
+				padding: 8px;
+			}
 		}
 	</style>
 </head>
 
 <body>
 	<h1>柴音 リクエスト曲 検索システム</h1>
-	<input type="text" id="title" placeholder="曲名を入力">
-	<input type="text" id="artist" placeholder="アーティスト名を入力">
-	<input type="text" id="genre" placeholder="ジャンルを入力">
-	<input type="text" id="detail" placeholder="詳細を入力">
-	<button onclick="search()">検索</button>
-
+	<div class="input-group">
+		<input type="text" id="title" placeholder="曲名を入力">
+		<input type="text" id="artist" placeholder="アーティスト名を入力">
+		<input type="text" id="genre" placeholder="ジャンルを入力">
+		<input type="text" id="detail" placeholder="詳細を入力">
+		<button onclick="search()">検索</button>
+	</div>
 	<table id="resultTable">
 		<thead></thead>
 		<tbody></tbody>
 	</table>
-
 	<script>
 		const sheetID = "1DzpEZLJuYmc90FyVJXLIHVbfcaMygQ0renWmSbwSNrQ";
 		const gid = "0"; // シートのGID（デフォルトは0）
