@@ -60,6 +60,12 @@
 			text-align: left;
 		}
 
+		th:nth-child(1),
+		td:nth-child(1) {
+			white-space: nowrap;
+			word-break: normal;
+		}
+
 		thead {
 			background: #eee;
 		}
@@ -90,7 +96,7 @@
 		<input type="text" id="title" placeholder="曲名を入力">
 		<input type="text" id="artist" placeholder="アーティスト名を入力">
 		<input type="text" id="genre" placeholder="ジャンルを入力">
-		<input type="text" id="detail" placeholder="詳細を入力">
+		<input type="text" id="detail" placeholder="アニメのタイトル等を入力">
 		<button onclick="search()">検索</button>
 	</div>
 	<table id="resultTable">
@@ -107,7 +113,7 @@
 			const genre = document.getElementById("genre").value;
 			const detail = document.getElementById("detail").value;
 
-			const query = `SELECT A, B, C, D, E WHERE B CONTAINS '${title}' AND C CONTAINS '${artist}' AND D CONTAINS '${genre}' AND E CONTAINS '${detail}' AND D IS NOT NULL AND D <> '選択' ORDER BY C`
+			const query = `SELECT A, B, C WHERE B CONTAINS '${title}' AND C CONTAINS '${artist}' AND D CONTAINS '${genre}' AND E CONTAINS '${detail}' AND D IS NOT NULL AND D <> '選択' ORDER BY C`
 			const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?gid=${gid}&tq=${encodeURIComponent(query)}`;
 
 			fetch(url)
