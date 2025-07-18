@@ -31,7 +31,8 @@
 			margin-bottom: 10px;
 		}
 
-		input {
+		input,
+		select {
 			padding: 10px;
 			font-size: 1rem;
 			border: 1px solid #ccc;
@@ -101,7 +102,28 @@
 	<div class="input-group">
 		<input type="text" id="title" placeholder="曲名を入力">
 		<input type="text" id="artist" placeholder="アーティスト名を入力">
-		<input type="text" id="genre" placeholder="ジャンルを入力">
+		<select id="genre">
+			<option value="">ジャンルを選択</option>
+			<option value="アニメ">アニメ</option>
+			<option value="ゲーム">ゲーム</option>
+			<option value="クラシック">クラシック</option>
+			<option value="JPOP">JPOP</option>
+			<option value="台湾">台湾</option>
+			<option value="オリジナル">オリジナル</option>
+			<option value="日本">日本</option>
+			<option value="民謡">民謡</option>
+			<option value="昭和歌謡">昭和歌謡</option>
+			<option value="ジャズ">ジャズ</option>
+			<option value="ジブリ">ジブリ</option>
+			<option value="ディズニー">ディズニー</option>
+			<option value="映画">映画</option>
+			<option value="洋楽">洋楽</option>
+			<option value="ミュージカル">ミュージカル</option>
+			<option value="VOCALOID">VOCALOID</option>
+			<option value="クリスマス">クリスマス</option>
+			<option value="VTuber">VTuber</option>
+			<!-- 必要に応じてジャンルを追加 -->
+		</select>
 		<input type="text" id="detail" placeholder="アニメのタイトル等を入力">
 		<button onclick="search()">検索</button>
 	</div>
