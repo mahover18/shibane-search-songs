@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>柴音 リクエスト曲 検索システム 1.0.0</title>
+	<title>柴音 リクエスト曲 検索システム 0.0.0</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<meta name="apple-mobile-web-app-title" content="柴音検索">
@@ -162,6 +162,16 @@
 					}).join("");
 				})
 				.catch(err => alert("検索に失敗しました: " + err));
+		}
+
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function() {
+				navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+					console.log('ServiceWorker registration successful with scope: ', registration.scope);
+				}, function(err) {
+					console.log('ServiceWorker registration failed: ', err);
+				});
+			});
 		}
 	</script>
 </body>

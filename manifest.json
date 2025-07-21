@@ -1,6 +1,7 @@
 {
   "name": "柴音検索",
   "short_name": "柴音検索",
+  "description": "柴音 リクエスト曲 検索システム（https://mahover18.github.io/shibane-search-songs/index.html）",
   "icons": [
     {
       "src": "icon-192.png",
@@ -13,6 +14,12 @@
       "type": "image/png"
     }
   ],
-  "start_url": ".",
-  "display": "standalone"
+  "start_url": "https://mahover18.github.io/shibane-search-songs/index.html",
+  "scope": "https://mahover18.github.io/shibane-search-songs/",
+  "display": "standalone",
+  "background_color": "#fffbe6",
+  "theme_color": "#ff9800",
+  "orientation": "portrait-primary",
+  "lang": "ja",
+  "id": "/shibane-search-songs/"
 }
