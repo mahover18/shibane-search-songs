@@ -1,5 +1,5 @@
 // バージョン番号をここで管理
-const APP_VERSION = '0.0.0'; // index.htmlの<title>などと合わせてください
+const APP_VERSION = '1.0.0'; // index.htmlの<title>などと合わせてください
 const CACHE_NAME = `shibane-search-songs-v${APP_VERSION}`;
 const urlsToCache = [
 	'/',
