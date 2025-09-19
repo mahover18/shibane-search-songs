@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>柴音リクエスト曲検索 1.0.1</title>
+	<title>柴音リクエスト曲検索 1.1.0</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<meta name="apple-mobile-web-app-title" content="柴音検索">
@@ -37,6 +37,13 @@
 			<option value="クリスマス">クリスマス</option>
 			<option value="VTuber">VTuber</option>
 			<!-- 必要に応じてジャンルを追加 -->
+		</select>
+		<select id="play">
+			<option value="">演奏を選択</option>
+			<option value="歌">歌</option>
+			<option value="ピアノ">ピアノ</option>
+			<option value="ピアノ・歌">ピアノ・歌</option>
+			<!-- 必要に応じて演奏を追加 -->
 		</select>
 		<input type="text" id="detail" placeholder="アニメのタイトル等を入力">
 		<button onclick="search()">検索</button>

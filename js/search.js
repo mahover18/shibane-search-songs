@@ -5,9 +5,10 @@ function search() {
 	const title = document.getElementById("title").value;
 	const artist = document.getElementById("artist").value;
 	const genre = document.getElementById("genre").value;
+	const play = document.getElementById("play").value;
 	const detail = document.getElementById("detail").value;
 
-	const query = `SELECT A, B, C WHERE B CONTAINS '${title}' AND C CONTAINS '${artist}' AND D CONTAINS '${genre}' AND E CONTAINS '${detail}' AND D IS NOT NULL AND D <> '選択' ORDER BY C`
+	const query = `SELECT A, B, C WHERE B CONTAINS '${title}' AND C CONTAINS '${artist}' AND D CONTAINS '${genre}' AND E CONTAINS '${play}' AND F CONTAINS '${detail}' AND D IS NOT NULL ORDER BY C`
 	const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?gid=${gid}&tq=${encodeURIComponent(query)}`;
 
 	fetch(url)
